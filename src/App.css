@@ -36,3 +36,82 @@
     transform: rotate(360deg);
   }
 }
+
+/***********/
+
+html{
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.barra{
+  display: flex;
+  justify-content: space-around;
+  /* padding: 1rem; */
+  background-color: #aaaaaa;
+}
+
+.barra button{
+  /* margin: 1rem 0 ; */
+  border: none;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  padding: .5rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  /* border-radius: 2px; */
+  letter-spacing: .1rem;
+  background-color: #d3d3d3;
+}
+
+.barra button:hover{
+  background-color: #65c95c;
+}
+
+.carrito{
+  margin-top: 1.5rem;
+}
+
+.divH1{
+  border-bottom: 3px solid #b32e2e;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.divH1 h3{
+  margin-top: 1.7rem;
+  margin-left: .3rem;
+  font-size: 1rem;
+  color:#555555;
+}
+
+.divH1 h1{
+  font-size: 3rem;
+}
+
+/****/
+
+.inicioBox{
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem;
+}
+
+.primerBox{
+  width: 150%;
+  padding: .2rem;
+}
+
+.primerBox img{
+  width: 100%;
+}
+
+.segundoBox{
+  width: 50%;
+}
+
+.segundoBox img{
+  width: 100%;
+}
+
