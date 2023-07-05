@@ -1,16 +1,27 @@
 import './App.css';
+import React from 'react';
 import NavBar from './componentes/navBar/navBar';
-import Lista from './componentes/Lista/Lista';
-import Inicio from './componentes/Inicio/Inicio';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import ItemListContainer from './componentes/ItemListContainer/ItemListContainer';
+import ItemDetailContainer from './componentes/ItemDetailContainer/ItemDetailContainer';
+import ItemDetail from './componentes/ItemDetailContainer/ItemDetail';
+import ColchonesPage from './Pages/ColchonesPage';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <NavBar/>
-      <Lista/>
-      <Inicio/>
-    </div>
+    <Router>
+      <div className="App">
+        <NavBar/>
+        <Routes>
+          <Route exact path="/" element={<ItemListContainer />} />
+          <Route path="/category/:id" element={<ItemListContainer />} />
+          <Route path="/item/:id" element={<ItemDetailContainer />} />
+          <Route path="/productos/:id" element={<ItemDetail />} />
+          <Route exact path="/colchones" component={ColchonesPage} />
+        </Routes>
+      </div>
+    </Router>
   );
-}
+};
 
 export default App;
