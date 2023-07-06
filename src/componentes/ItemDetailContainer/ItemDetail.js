@@ -1,33 +1,26 @@
-import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
-import { getProductById } from '../../api'; 
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-const ItemDetail = () => {
-  const { id } = useParams();
-  const [product, setProduct] = useState(null);
-
-  useEffect(() => {
-    const fetchProduct = async () => {
-      try {
-        const product = await getProductById(id);
-        setProduct(product);
-      } catch (error) {
-        console.log('Error fetching product:', error);
-      }
-    };
-
-    fetchProduct();
-  }, [id]);
-
+const ItemDetail = ({ product }) => {
   if (!product) {
     return <div>Cargando...</div>;
   }
 
   return (
     <div>
-      <img src={product.image} alt={product.name} />
-      <h1>{product.name}</h1>
-      <p>{product.description}</p>
+      {/* <h1 className='titulo'>El Palacio del Sueño</h1>  */}
+    <div className='productoDescripcionBox'>
+      <div>
+        <img src={product.image} alt={product.name} className='productoDescripcionImg' />
+      </div>
+      <div className='productoDescripcion'>
+        <h2 className='titulo tituloDescripcion'>{product.name}</h2>
+        <p>{product.description}</p>
+        <Link to="/"> 
+          <button>Volver a Inicio</button> 
+        </Link>
+      </div>
+    </div>
     </div>
   );
 };

@@ -8,7 +8,9 @@ const ItemDetailContainer = () => {
   const [product, setProduct] = useState(null);
 
   useEffect(() => {
-    getProductById(id)
+    const productId = parseInt(id); 
+    console.log(productId); 
+    getProductById(productId)
       .then(data => setProduct(data))
       .catch(error => console.error(error));
   }, [id]);
