@@ -18,7 +18,6 @@ const App = () => {
           <Routes>
             <Route exact path="/" element={<ItemListContainer />} />
             <Route path="/category/:id" element={<ItemListContainer />} />
-            {/* Pasar handleAddToCart como prop al componente ItemDetailContainer */}
             <Route
               path="/productos/:id"
               element={<ItemDetailContainer />}

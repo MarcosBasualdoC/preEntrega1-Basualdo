@@ -4,7 +4,7 @@ import { useCart } from '../Cart/CartContext';
 
 const ItemDetail = ({ product }) => {
   const [addedToCart, setAddedToCart] = useState(false);
-  const [quantity, setQuantity] = useState(1); // Estado para almacenar la cantidad deseada
+  const [quantity, setQuantity] = useState(1);
   const { addToCart } = useCart();
 
   const handleButtonClick = () => {
@@ -13,11 +13,11 @@ const ItemDetail = ({ product }) => {
         id: product.id,
         name: product.name,
         precio: product.precio,
-        quantity: quantity, // Agregamos la cantidad al item del carrito
+        quantity: quantity,
       };
-      addToCart(itemToAdd); // Agregamos el item al carrito utilizando la función del contexto
+      addToCart(itemToAdd); 
     }
-    setAddedToCart(!addedToCart); // Cambiar el estado para alternar entre "Agregar al carrito" y "Finalizar compra"
+    setAddedToCart(!addedToCart); 
   };
 
   if (!product) {
@@ -34,7 +34,6 @@ const ItemDetail = ({ product }) => {
           <h2 className='titulo tituloDescripcion'>{product.name}</h2>
           <p>{product.description}</p>
           <p>Precio: ${product.precio}</p>
-          {/* Select para la cantidad */}
           <label>
             Cantidad:
             <select value={quantity} onChange={(e) => setQuantity(parseInt(e.target.value))}>

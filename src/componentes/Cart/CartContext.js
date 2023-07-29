@@ -10,7 +10,6 @@ export const CartProvider = ({ children }) => {
   const [cartItems, setCartItems] = useState([]);
 
   const addToCart = (item) => {
-    // Verificamos si el producto ya está en el carrito
     const existingItem = cartItems.find((cartItem) => cartItem.id === item.id);
 
     if (existingItem) {
@@ -18,7 +17,6 @@ export const CartProvider = ({ children }) => {
       return;
     }
 
-    // Si el producto no está en el carrito, lo agregamos
     setCartItems([...cartItems, item]);
   };
 

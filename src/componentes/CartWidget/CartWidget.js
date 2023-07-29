@@ -5,8 +5,7 @@ import carrito from "../img/carrito.svg";
 
 const CartWidget = () => {
   const { cartItems } = useCart();
-
-  // Calcular el número total de unidades en el carrito
+  
   const totalQuantity = cartItems.reduce((total, item) => total + item.quantity, 0);
 
   return (

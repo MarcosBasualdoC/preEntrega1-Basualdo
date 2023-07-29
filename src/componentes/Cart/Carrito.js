@@ -3,7 +3,7 @@ import { useCart } from '../Cart/CartContext';
 import { Link } from 'react-router-dom';
 
 const Carrito = () => {
-  const { cartItems, removeFromCart, clearCart } = useCart(); // Agregamos la función emptyCart para vaciar el carrito
+  const { cartItems, removeFromCart, clearCart } = useCart();
   const totalPrice = cartItems.reduce((total, item) => total + item.precio * item.quantity, 0);
 
   const handleRemoveFromCart = (itemId) => {
@@ -15,7 +15,7 @@ const Carrito = () => {
   };
 
   const handleCheckoutClick = () => {
-    // Implementa tu lógica para el proceso de checkout aquí
+    
   };
 
   return (
@@ -34,7 +34,7 @@ const Carrito = () => {
             </div>
           ))}
           <p>Total: ${totalPrice}</p>
-          <button onClick={handleEmptyCart}>Vaciar Carrito</button> {/* Agregamos el botón de vaciar carrito */}
+          <button onClick={handleEmptyCart}>Vaciar Carrito</button>
           {cartItems.length > 0 && <button onClick={handleCheckoutClick}>Checkout</button>}
         </div>
       )}
