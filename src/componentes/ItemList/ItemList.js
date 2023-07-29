@@ -10,7 +10,7 @@ const ItemList = ({ products }) => {
           <div key={product.id} className="producto">
             <img className="productoImagen" src={product.image} alt={product.name} />
             <h2>{product.name}</h2>
-            {/* <p>{product.description}</p> */}
+            <p>${product.precio}</p>
             <Link to={`/productos/${product.id}`}>
               <button className='masInfo'>Más información</button>
             </Link>

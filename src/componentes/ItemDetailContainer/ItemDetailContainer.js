@@ -1,25 +1,26 @@
-import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
 import ItemDetail from './ItemDetail';
-import { getProductById } from '../../api'; 
+import { getProductById } from '../../api';
+import { useParams } from 'react-router-dom'; // Importar el hook useParams
 
-const ItemDetailContainer = () => {
-  const { id } = useParams();
+const ItemDetailContainer = ({ handleAddToCart }) => {
+  const { id } = useParams(); // Obtener el parámetro "id" de la URL
   const [product, setProduct] = useState(null);
 
   useEffect(() => {
-    const productId = parseInt(id); 
-    console.log(productId); 
-    getProductById(productId)
-      .then(data => setProduct(data))
-      .catch(error => console.error(error));
+    const fetchProduct = async () => {
+      try {
+        const product = await getProductById(id); // Usar el "id" obtenido de useParams
+        setProduct(product);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    fetchProduct();
   }, [id]);
 
-  if (!product) {
-    return <div>Cargando producto...</div>;
-  }
-
-  return <ItemDetail product={product} />;
+  return <ItemDetail product={product} handleAddToCart={handleAddToCart} />;
 };
 
 export default ItemDetailContainer;

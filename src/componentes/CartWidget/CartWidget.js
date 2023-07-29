@@ -1,12 +1,20 @@
-import carrito from "../img/carrito.svg"
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { useCart } from '../Cart/CartContext';
+import carrito from "../img/carrito.svg";
 
 const CartWidget = () => {
-    return(
-        <div className="carrito">
-            <img src={carrito} alt="carrito de compras" width={25}/>
-            0
-        </div>
-    )
-}
+  const { cartItems } = useCart();
 
-export default CartWidget
+  // Calcular el número total de unidades en el carrito
+  const totalQuantity = cartItems.reduce((total, item) => total + item.quantity, 0);
+
+  return (
+    <Link to="/carrito" className="carrito">
+      <img src={carrito} alt="carrito de compras" width={25} />
+      <span>{totalQuantity}</span>
+    </Link>
+  );
+};
+
+export default CartWidget;
