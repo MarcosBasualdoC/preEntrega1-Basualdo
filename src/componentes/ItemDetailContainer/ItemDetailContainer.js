@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import ItemDetail from './ItemDetail';
 import { getDoc, doc } from 'firebase/firestore';
 import { db } from '../../config/firebase';
-import { useParams } from 'react-router-dom'; 
+import { useParams } from 'react-router-dom';
 
 const ItemDetailContainer = ({ handleAddToCart }) => {
   const { id } = useParams();
@@ -11,7 +11,7 @@ const ItemDetailContainer = ({ handleAddToCart }) => {
   useEffect(() => {
     const fetchProduct = async () => {
       try {
-        const productRef = doc(db, 'items', id); 
+        const productRef = doc(db, 'items', id);
         const docSnapshot = await getDoc(productRef);
         if (docSnapshot.exists()) {
           const data = docSnapshot.data();

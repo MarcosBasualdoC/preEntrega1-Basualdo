@@ -6,6 +6,7 @@ import ItemListContainer from './componentes/ItemListContainer/ItemListContainer
 import ItemDetailContainer from './componentes/ItemDetailContainer/ItemDetailContainer';
 import Carrito from './componentes/Cart/Carrito';
 import { CartProvider } from './componentes/Cart/CartContext';
+import CheckoutForm from './componentes/checkout/checkoutForm';
 
 
 
@@ -23,6 +24,7 @@ const App = () => {
               element={<ItemDetailContainer />}
             />
             <Route path="/carrito" element={<Carrito />} />
+            <Route path="/checkout" element={<CheckoutForm />} />
           </Routes>
         </CartProvider>
       </div>

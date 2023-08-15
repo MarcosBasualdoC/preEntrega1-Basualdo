@@ -57,6 +57,10 @@ body{
   padding: .4rem;
 }
 
+.carrito{
+  text-decoration: none;
+}
+
 .botones{
   /* margin: 1rem 0 ; */
   border: none;
@@ -115,7 +119,13 @@ body{
 }
 
 .producto h2{
-  font-size: 1.2rem;
+  font-size: 1.3rem;
+}
+
+.producto p{
+  color: #046d00;
+  font-weight: bold;
+  font-size: 1.1rem;
 }
 
 
@@ -149,8 +159,75 @@ body{
 .productoDescripcion{
   display: flex;
   flex-direction: column;
-  /* text-align: start; */
   margin-left: -5rem;
   margin-top: -5rem;
   width: 40%;
+}
+
+.productoDescripcionPrecio{
+  color: #046d00;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.agregarCarrito{
+  width: 30%;
+  margin-left: 12rem;
+  margin-top: 1rem;
+  margin-bottom: .5rem;
+}
+
+.finalizarCompra{
+  margin-left: 0;
+  border-color: #046d00;
+  color: #046d00;
+}
+
+/***********************/
+
+.carritoDeCompras{
+  display: flex;
+  justify-content:space-between;
+  gap: 1rem;
+}
+
+.botonX{
+  height: 50%;
+  margin-top: .9rem;
+}
+
+.botonX:hover{
+  border-color: #e41717;
+  color: #e41717;
+  cursor: pointer;
+}
+
+.carritoDeComprasBox{
+  width: 30%;
+  margin: auto;
+}
+
+.carritoTotal{
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.carritoCheckout{
+  margin: 0 1rem;
+  border-color: #046d00;
+  color: #046d00;
+}
+
+/**************/
+
+.formCheckout{
+  width: 20%;
+  margin: auto;
+}
+
+.formCheckout div{
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
 }

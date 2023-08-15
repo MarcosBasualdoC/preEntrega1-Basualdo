@@ -11,7 +11,7 @@ const ItemListContainer = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        let productCollection = collection(db, 'items'); 
+        let productCollection = collection(db, 'items');
 
         if (id) {
           const q = query(productCollection, where('categoryId', '==', id));

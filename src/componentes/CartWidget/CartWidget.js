@@ -5,7 +5,7 @@ import carrito from "../img/carrito.svg";
 
 const CartWidget = () => {
   const { cartItems } = useCart();
-  
+
   const totalQuantity = cartItems.reduce((total, item) => total + item.quantity, 0);
 
   return (

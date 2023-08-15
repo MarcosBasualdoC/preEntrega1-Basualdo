@@ -15,9 +15,9 @@ const ItemDetail = ({ product }) => {
         precio: product.precio,
         quantity: quantity,
       };
-      addToCart(itemToAdd); 
+      addToCart(itemToAdd);
     }
-    setAddedToCart(!addedToCart); 
+    setAddedToCart(!addedToCart);
   };
 
   if (!product) {
@@ -33,7 +33,7 @@ const ItemDetail = ({ product }) => {
         <div className='productoDescripcion'>
           <h2 className='titulo tituloDescripcion'>{product.name}</h2>
           <p>{product.description}</p>
-          <p>Precio: ${product.precio}</p>
+          <p>Precio: <span className='productoDescripcionPrecio'>${product.precio}</span></p>
           <label>
             Cantidad:
             <select value={quantity} onChange={(e) => setQuantity(parseInt(e.target.value))}>
@@ -44,10 +44,10 @@ const ItemDetail = ({ product }) => {
           </label>
           {addedToCart ? (
             <Link to='/carrito'>
-              <button>Finalizar compra</button>
+              <button className='agregarCarrito finalizarCompra'>Finalizar compra</button>
             </Link>
           ) : (
-            <button onClick={handleButtonClick}>Agregar al carrito</button>
+            <button className='agregarCarrito' onClick={handleButtonClick}>Agregar al carrito</button>
           )}
           <Link to='/'>
             <button>Volver a Inicio</button>
